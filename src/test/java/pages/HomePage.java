@@ -16,6 +16,7 @@ public class HomePage extends BasePage {
 
     public SignInPage clickSignIn() throws InterruptedException {
         clickOnButton(signInBtn);
+        System.out.println("Clicked SignIn button");
         // Thread.sleep(3000);
         return new SignInPage(driver);
     }
