@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.UserHomePage;
+import utilities.ExtentReports.ExtentTestManager;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -17,8 +18,9 @@ public class LoginTest extends BaseTest {
         String propFilePath = System.getProperty("user.dir")+"\\src\\test\\resources\\configuration.properties";
         prop.load(new FileInputStream(propFilePath));
     }
-        @Test
+        @Test(description = "successful- sign in Amazon testcase")
         public void login() throws InterruptedException {
+            ExtentTestManager.startTest("login","successful- sign in Amazon testcase");
 
             HomePage homePage = new HomePage(driver);
             UserHomePage userHomePage = new UserHomePage(driver);
