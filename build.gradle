@@ -18,6 +18,12 @@ dependencies {
     // https://mvnrepository.com/artifact/com.relevantcodes/extentreports
     compile group: 'com.relevantcodes', name: 'extentreports', version: '2.41.2'
 
+}
 
-
+test {
+    useTestNG() {
+        useDefaultListeners = true
+        suiteXmlFilesm << new File("src/test/java/TestNG.xml")
+        setSuiteXmlFiles(suiteXmlFiles)
+    }
 }
